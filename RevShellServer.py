@@ -4,8 +4,8 @@ import os
 import random
 import string
 
-HOST = sys.argv[1] if len(sys.argv) > 1 else '0.0.0.0'
-PORT = int(sys.argv[2] if len(sys.argv) > 2 else 5555)
+HOST = sys.argv[1] if len(sys.argv) > 1 else '0.0.0.0' # Change 0.0.0.0 to the ip of your device and go into your Router settings to setup port forwarding
+PORT = int(sys.argv[2] if len(sys.argv) > 2 else 5555) # Enter this port when asked which port is to be forwarded
 
 s = socket.socket()
 s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
