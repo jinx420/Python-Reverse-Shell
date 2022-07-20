@@ -2,7 +2,6 @@
 This is a simple reverse shell in python
 
 # Only runs in Windows right now
-# Check requirements.txt if you have all
 # Client.py or Client.pyw?
 Client.py is more of a debug version because it shows the terminal when you open it so choose Client.pyw if you dont want it to be shown
 
