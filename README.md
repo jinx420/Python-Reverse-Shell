@@ -1,7 +1,7 @@
 # Educational purposes only!
 This is a simple reverse shell in python
 
-# Only runs on Windows yet
+# Only runs in Windows right now
 # Client.py or Client.pyw?
 Client.py is more of a debug version because it shows the terminal when you open it so choose Client.pyw if you dont want it to be shown
 
