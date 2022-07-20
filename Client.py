@@ -5,8 +5,6 @@ import string
 import subprocess
 import sys
 
-# 
-
 if os.name != 'nt':
     exit()
 username = os.getenv("username")
