@@ -1,5 +1,4 @@
 # Educational purposes only!
-# Python-Reverse-Shell
 This is a simple reverse shell in python
 
 # Only runs on Windows yet
