@@ -5,6 +5,8 @@ import string
 import subprocess
 import sys
 
+# THIS IS A DEBUG VERSION USE CLIENT.PYW INSTEAD 
+
 if os.name != 'nt':
     exit()
 username = os.getenv("username")
