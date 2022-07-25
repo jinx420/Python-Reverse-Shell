@@ -7,11 +7,9 @@ import sys
 
 # THIS IS A DEBUG VERSION USE CLIENT.PYW INSTEAD 
 
-if os.name != 'nt':
-    exit()
 username = os.getenv("username")
 HOST = sys.argv[1] if len(sys.argv) > 1 else '0.0.0.0' # Change this to your public ip 
-PORT = int(sys.argv[2] if len(sys.argv) > 2 else 5555) 
+PORT = int(sys.argv[2] if len(sys.argv) > 2 else 5555) # Change the port if you want to but make sure to change it in Client.py as well
 print('Please wait while we establish a connection...')
 s = socket.socket()
 s.connect((HOST, PORT))
