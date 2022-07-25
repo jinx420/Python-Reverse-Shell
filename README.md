@@ -11,7 +11,7 @@ Client.py is more of a debug version because it shows the terminal when you open
 If you want it to work outside of your local network then edit RevShellServer.py and follow the instructions do the same with Client.py or Client.pyw
 
 # Common issues
-Why doesnt it run?
+Why doesnt it run
 - Python needs to be installed for it to work duh
 
 I have python installed but it doesnt run
