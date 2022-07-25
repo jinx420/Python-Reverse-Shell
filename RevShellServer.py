@@ -27,6 +27,11 @@ while True:
 
         if cmd.lower() in ['q', 'quit', 'x', 'exit']:
             break
+        
+        # To add your own command remove the # below and change alias with the command alias and command with the command name
+
+        # if cmd.lower() in ['alias', 'command']:   
+            # put you code here
 
         result = client[0].recv(1024).decode()
         print(result)
