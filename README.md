@@ -1,5 +1,6 @@
-# Educational purposes only!
-This is a simple reverse shell in python
+# Attention
+This Repo is intended for educational purposes only. I cant be held liable for any damages 
+caused by improper usage of this publication.
 
 # Only runs in Windows right now
 # Client.py or Client.pyw?
