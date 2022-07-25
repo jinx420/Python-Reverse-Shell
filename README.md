@@ -5,7 +5,7 @@ caused by improper usage of this publication.
 # Works on Linux as well as Windows
 
 # Client.py or Client.pyw?
-Client.py is more of a debug version because it shows the terminal when you open it so choose Client.pyw (client.pyw only works on linux)
+Client.py is more of a debug version because it shows the terminal when you open it so choose Client.pyw (Client.pyw only works on Windows)
 
 # Outside of local Network
 If you want it to work outside of your local network then edit RevShellServer.py and follow the instructions do the same with Client.py or Client.pyw
