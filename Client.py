@@ -21,6 +21,11 @@ while True:
     # print(f'[*] receive {cmd}')
     if cmd.lower() in ['q', 'quit', 'x', 'exit']:
         break
+    
+    # To add your own command remove the # below and change alias with the command alias and command with the command name
+    
+    # if cmd.lower() in ['alias', 'command']:   
+        # put you code here
 
     try:
         result = subprocess.check_output(cmd, stderr=subprocess.STDOUT, shell=True)
