@@ -31,6 +31,6 @@ Add this code at line 23 or below (Client.py)
 Add this code at line 30 or below (RevShellServer.py)
 
 if cmd.lower() in ['command alias', 'command']:
-  
-  put your code here and change comamnd alias with your alias and command with the full name of your command and make sure to add the command to both the client and server
+  {}
+  put your code in {} and change comamnd alias with your alias and command with the full name of your command and make sure to add the command to both the client and server
  
