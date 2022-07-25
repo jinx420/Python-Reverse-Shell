@@ -24,14 +24,5 @@ It wont connect
 Every command from the Terminal or Command prompt will work
 
 # Can I add my own commands
-Yes you can do it like this:
-
-Add this code at line 23 or below (Client.py)
-
-Add this code at line 30 or below (RevShellServer.py)
-
-if cmd.lower() in ['command alias', 'command']:
-  {}
-  
-put your code in {} and change comamnd alias with your alias and command with the full name of your command and make sure to add the command to both the client and server
+Yes you can, follow the instruction in Client.py and RevShellServer.py
  
