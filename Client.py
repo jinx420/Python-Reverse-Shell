@@ -23,7 +23,7 @@ while True:
         break
     
     # To add your own command remove the # below and change alias with the command alias and command with the command name
-    
+    # Make sure to add it to RevShellServer.py as well
     # if cmd.lower() in ['alias', 'command']:   
         # put you code here
 
