@@ -17,7 +17,6 @@ s.listen(1)
 
 while True:
     print(f'[*] listening as {HOST}:{PORT}')
-
     client = s.accept()
     print(f'[*] Client connected {client[1]}')
 
