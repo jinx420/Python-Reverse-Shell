@@ -21,7 +21,7 @@ I have python installed but it doesnt run
 - Check if you have all the packages installed but every package should already be installed
 
 It wont connect
-- There can be many reasons for that, but most common are: firewall blocking traffic (this is only an issue when you use it outside of your local Network), the port on which the Server runs is already used (this will output an error saying that the port is already in use, change it if thats the case)
+- There can be many reasons for that, but most common are: firewall blocking traffic, the port on which the Server runs is already used (this will output an error saying that the port is already in use, change it if thats the case)
 
 I opened a file through the reverse shell now i cant do anything
 - You cant open files through the reverse shell well technically you can but this breaks the shell since its waiting for a response
