@@ -3,6 +3,7 @@ import sys
 import os
 import random
 import string
+import time
 
 h_name = socket.gethostname()
 ipaddr = socket.gethostbyname(h_name)
@@ -30,6 +31,32 @@ while True:
 
         if cmd.lower() in ['q', 'quit', 'x', 'exit']:
             break
+
+        # This will close the connection
+        if cmd.lower() in ['down', 'download']:
+            yesNo = input('This will close the connection are you sure you want to do this? Y/n\n')
+            if yesNo.lower() in ['y', 'yes']:
+                print("\033c", end='')
+                client[0].send('y'.encode())
+                sep = '#SEP#'
+                which = input('File:\n')
+                print("\033c", end='')
+                file1 = client[0].send(which.encode())
+                file, file_size = client[0].recv(1024).decode().split(sep)
+                file_name = os.path.basename(file)
+                file_size = int(file_size)
+                with open(file_name, 'wb') as f:
+                    bytes_recv = client[0].recv(1024)
+                    while bytes_recv:
+                        f.write(bytes_recv)
+                        bytes_recv = client[0].recv(1024)
+                print('Download complete closing...')
+                client[0].close()
+                s.close()
+                sys.stderr = object
+            else:
+                client[0].send('n'.encode())
+                continue
 
         # To add your own command remove the # below and change alias with the command alias and command with the command name
         # Make sure to add it to Client.py as well
