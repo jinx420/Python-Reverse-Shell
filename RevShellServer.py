@@ -23,7 +23,10 @@ while True:
 
     client[0].send('Welcome'.encode())
     while True:
-        cmd = input('>>> ')
+        # cmd = input('╰─➤ ')
+        # cmd = input('─➤ ')
+        cmd = input('$ ')
+        # cmd = input('>>> ')
         client[0].send(cmd.encode())
 
         if cmd.lower() in ['q', 'quit', 'x', 'exit']:
