@@ -31,19 +31,6 @@ while True:
         if cmd.lower() in ['q', 'quit', 'x', 'exit']:
             break
 
-        # if cmd.lower() in ['down', 'download']:
-        #     sep = '#SEP#'
-        #     which = input('File:\n')
-        #     file1 = client[0].send(which.encode())
-        #     file, file_size = client[0].recv(1024).decode().split(sep)
-        #     file_name = os.path.basename(file)
-        #     file_size = int(file_size)
-        #     with open(file_name, 'wb') as f:
-        #         bytes_recv = client[0].recv(1024)
-        #         while bytes_recv:
-        #             f.write(bytes_recv)
-        #             bytes_recv = client[0].recv(1024)
-
         # To add your own command remove the # below and change alias with the command alias and command with the command name
         # Make sure to add it to Client.py as well
         # if cmd.lower() in ['alias', 'command']:   
