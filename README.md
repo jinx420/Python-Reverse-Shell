@@ -8,7 +8,7 @@ caused by improper usage of this publication.
 Client.py is more of a debug version because it shows the terminal when you open it so choose Client.pyw (Client.pyw only works on Windows)
 
 # Outside of local Network
-If you want it to work outside of your local network then edit RevShellServer.py and follow the instructions do the same with Client.py and / or Client.pyw
+If you want it to work outside of your local network, then edit RevShellServer.py and follow the instructions do the same with Client.py and / or Client.pyw
 
 # New Issues
 If you encounter any Issues make sure to open a new Issue under the 'Issues' tab and I will try to fix it as soon as possible
