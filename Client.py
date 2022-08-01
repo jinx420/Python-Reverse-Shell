@@ -4,7 +4,6 @@ import socket
 import string
 import subprocess
 import sys
-import ctypes
 import random
 
 from threading import Thread
