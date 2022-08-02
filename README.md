@@ -23,14 +23,14 @@ I have python installed but it doesnt run
 It wont connect
 - There can be many reasons for that, but most common are: firewall blocking traffic, the port on which the Server runs is already used (this will output an error saying that the port is already in use, change it if thats the case)
 
-I opened a file through the reverse shell now i cant do anything
+I opened a file through the reverse shell now I cant do anything
 - You cannot open files through the reverse shell, well technically you can but this breaks the shell since its waiting for a response. If you want to read a file use cat or type (on Windows)
 
-I created a file through the shell but i cant edit it file
+I created a file through the shell but I cant edit it file
 - Use echo 'your text here' > filename to edit it or if you have multiple lines in that file echo 'your text here' >> filename
 
-How can i revert the encryption
-- Currently there is no way to revert the encryption
+How can I revert the encryption
+- Currently there is no way to revert the encryption, I might add a decryptor later but currently there are no plans to do so
 
 # Which commands work
 Every command from the Terminal / Command prompt will work
