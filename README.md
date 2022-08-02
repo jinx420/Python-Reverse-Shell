@@ -29,6 +29,9 @@ I opened a file through the reverse shell now i cant do anything
 I created a file through the shell but i cant edit it file
 - Use echo 'your text here' > filename to edit it or if you have multiple lines in that file echo 'your text here' >> filename
 
+How can i revert the encryption
+- Currently there is no way to revert the encryption
+
 # Which commands work
 Every command from the Terminal / Command prompt will work
 
