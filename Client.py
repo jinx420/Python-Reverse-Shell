@@ -12,7 +12,7 @@ from datetime import datetime
 
 # THIS IS A DEBUG VERSION USE CLIENT.PYW INSTEAD 
 
-HOST = sys.argv[1] if len(sys.argv) > 1 else '192.168.2.198' # Change this to your public ip if you want to use it outside of your local network
+HOST = sys.argv[1] if len(sys.argv) > 1 else '192.168.2.174' # Change this to your public ip if you want to use it outside of your local network
 PORT = int(sys.argv[2] if len(sys.argv) > 2 else 5555) # Change the port if you want to but make sure to change it in Client.py as well
 print('Please wait while we establish a connection...')
 s = socket.socket()
