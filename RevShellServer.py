@@ -33,6 +33,9 @@ while True:
         if cmd.lower() in ['q', 'quit', 'x', 'exit']:
             break
 
+        if cmd.lower() in ['h', 'help']:
+            print('h, help          Displays this help\ndown. download          usage <down> lets you download files from the remote System\nrw, encrypt, ransomware            usage <rw, encrypt, ransomware> encrypts all .txt, .log files on the remote system, you can add more extensions if you want')
+
         # This will close the connection
         if cmd.lower() in ['down', 'download']:
             yesNo = input('This will close the connection are you sure you want to do this? Y/n\n')

