@@ -33,7 +33,7 @@ How can I revert the encryption
 - Currently there is no way to revert the encryption, I might add a decryptor later but currently there are no plans to do so
 
 # Which commands work
-Every command from the Terminal / Command prompt will work
+Every command from the Terminal / Command prompt and custom commands will work
 
 # Can I add my own commands
 Yes you can, follow the instruction in Client.py / Client.pyw and RevShellServer.py
