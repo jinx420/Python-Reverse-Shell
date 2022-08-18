@@ -11,7 +11,7 @@ from queue import Queue
 from datetime import datetime
 
 
-# THIS IS A DEBUG VERSION USE CLIENT.PYW INSTEAD 
+# THIS IS A DEBUG VERSION USE CLIENT.PYW INSTEAD (Client.pyw only works on windows so if you are on linux use this)
 
 
 # Ip address and port to connect to
