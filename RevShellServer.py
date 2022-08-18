@@ -6,22 +6,31 @@ import string
 import time
 import secrets
 
+
+# Get hostname 
 h_name = socket.gethostname()
 ipaddr = socket.gethostbyname(h_name)
+
+
+# Socket host address and port
 HOST = sys.argv[1] if len(sys.argv) > 1 else ipaddr # Go into your Router settings to setup port forwarding if you want to use it outside of your local network
 PORT = int(sys.argv[2] if len(sys.argv) > 2 else 5555) # Enter this port when asked which port is to be forwarded
 
+
+# Make socket
 s = socket.socket()
 s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 s.bind((HOST, PORT))
 s.listen(1)
 
+
+# Waiting for input
 while True:
 
     print(f'[*] listening as {HOST}:{PORT}')
     client = s.accept()
     print(f'[*] Client connected {client[1]}')
-    client[0].send('Welcome'.encode())
+    client[0].send('Наше дело правое, победа будет за нами!'.encode())
 
     while True:
         # cmd = input('╰─➤ ')
