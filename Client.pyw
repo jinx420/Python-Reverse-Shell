@@ -35,7 +35,7 @@ while True:
         sys.stderr = object
         continue
 
-    # This will close the connection
+    # This will close the connection because tcp doesnt know when the end of the file is reached so it keeps waiting for data which means the shell cannot be used anymore and it has to be killed
     if cmd.lower() in ['down', 'download']:
         yesNo = s.recv(1024).decode()
         if yesNo == 'y':
