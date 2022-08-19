@@ -13,7 +13,7 @@ from datetime import datetime
 
 # Ip address of host and port to connect to
 HOST = sys.argv[1] if len(sys.argv) > 1 else 'IP ADDRESS OF THE SERVER' # Change this to your public ip if you want to use it outside of your local network
-PORT = int(sys.argv[2] if len(sys.argv) > 2 else 5555) # Change the port if you want to but make sure to change it in Client.py as well
+PORT = int(sys.argv[2] if len(sys.argv) > 2 else 2022) # Change the port if you want to but make sure to change it in Client.py as well
 
 
 # Connect to socket

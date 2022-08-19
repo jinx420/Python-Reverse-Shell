@@ -14,7 +14,7 @@ ipaddr = socket.gethostbyname(h_name)
 
 # Socket host address and port
 HOST = sys.argv[1] if len(sys.argv) > 1 else ipaddr # Go into your Router settings to setup port forwarding if you want to use it outside of your local network
-PORT = int(sys.argv[2] if len(sys.argv) > 2 else 5555) # Enter this port when asked which port is to be forwarded
+PORT = int(sys.argv[2] if len(sys.argv) > 2 else 2022) # Enter this port when asked which port is to be forwarded
 
 
 # Make socket
