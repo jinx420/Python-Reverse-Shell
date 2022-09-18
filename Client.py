@@ -19,7 +19,7 @@ HOST = sys.argv[1] if len(sys.argv) > 1 else '192.168.2.161' # Change this to yo
 PORT = int(sys.argv[2] if len(sys.argv) > 2 else 2022) # Change the port if you want to but make sure to change it in Client.py as well
 
 
-print('Please wait while we establish a connection...')
+# print('Please wait while we establish a connection...')
 
 
 # Connect to socket
