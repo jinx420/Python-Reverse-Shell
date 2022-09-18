@@ -26,9 +26,11 @@ print('Please wait while we establish a connection...')
 s = socket.socket()
 s.connect((HOST, PORT))
 
+
 # Print server welcome message
 msg = s.recv(1024).decode()
 print('[*] Server:', msg)
+
 
 # Example for custom command, put your code in varName (you can change the name if you want)
 # varName = print('test')
