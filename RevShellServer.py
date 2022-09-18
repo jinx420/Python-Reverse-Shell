@@ -101,8 +101,6 @@ while True:
 
 
     client[0].close()
-
-
     cmd = input('Wait for new client Y/n ') or 'y'
     print("\033c", end='')
     if cmd.lower() in ['n', 'no']:
