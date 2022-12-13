@@ -146,3 +146,4 @@ while True:
 
 
 s.close()
+print("\033c", end='')
